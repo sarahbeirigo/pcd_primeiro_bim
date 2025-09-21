@@ -1,0 +1,45 @@
+<header
+    class="fixed flex items-center justify-center w-full h-[80px] inset-0 bg-white border border-[#0000001a] [backdrop-filter:saturate(180%)_blur(13px)] z-50">
+    <nav class="relative flex size-full items-center justify-center z-50">
+        <div
+            class="relative w-full h-[80px] {% if not user.is_authenticated %}max-w-[1120px]{% endif %} flex items-center justify-between mx-[15px] min-[450px]:mx-[30px] z-50">
+            <a href="{% url 'home' %}" class="text-xl text-[#0231a3] font-bold uppercase">
+                Rifando
+            </a>
+            {% if request.path == '/' or request.path == '/rifas/' %}
+                <div class="hidden sm:flex items-center gap-8 md:gap-14">
+                    <a href="{% url 'raffle_list_public' %}" class="text-md font-semibold text-blue-600 hover:text-blue-400">
+                        Rifas
+                    </a>
+                    <a href="#" class="text-md font-semibold text-blue-600 hover:text-blue-400">
+                        Preços
+                    </a>
+                    <a href="#" class="text-md font-semibold text-blue-600 hover:text-blue-400">
+                        Sobre Nós
+                    </a>
+                    <a href="#" class="text-md font-semibold text-blue-600 hover:text-blue-400">
+                        Ajuda
+                    </a>
+                </div>
+                {% if not user.is_authenticated %}
+                    <div class="relative flex items-center gap-4">
+                        <a href="{% url 'login' %}"
+                            class="flex items-center bg-transparent text-[#0146e0] hover:text-[#0354ff] transition-colors duration-75">Login</a>
+                        <a href="{% url 'register' %}"
+                            class="flex items-center justify-center text-[14px] bg-[#0146e0] hover:bg-[#0354ff] text-white rounded-[15px] px-[18px] py-[14px] [transition:filter_180ms,background_180ms,border-color_180ms,opacity_180ms,easy-in-out]">Criar
+                            conta</a>
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% if user.is_authenticated %}
+                <div class="relative flex items-center gap-4">
+                    <a href="{% url 'dashboard_main' %}"
+                        class="flex items-center bg-transparent text-[#374151] font-bold uppercase hover:text-[#0354ff] transition-colors duration-75">
+                        <i class="bi bi-person-fill"></i>
+                        <span>{{ user.first_name }}</span>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</header>

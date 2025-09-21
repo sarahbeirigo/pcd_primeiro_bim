@@ -1,0 +1,14 @@
+{% extends 'dashboard/base_logged.html' %}
+{% load static %}
+
+{% block title %}Dashboard - Rifando{% endblock %}
+
+{% block dashboard_content %}
+<h1 class="text-4xl mb-4">Bem-vindo à sua conta</h1>
+<p class="mb-6">Aqui você pode gerenciar suas informações e rifas.</p>
+<section>
+    <h2 class="text-2xl mb-2">Informações do Usuário</h2>
+    <p><strong>Nome:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+</section>
+{% endblock %}

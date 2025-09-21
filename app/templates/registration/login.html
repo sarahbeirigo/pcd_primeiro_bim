@@ -1,0 +1,77 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %}Login - Rifando{% endblock %}
+
+{% block content %}
+<div class="bg-white px-8 py-12 rounded-2xl w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-gray-800">Login</h2>
+    <p class="text-center text-gray-500">Welcome Back!</p>
+    {% if form.errors %}
+    <p class="text-center text-danger-500">
+        {% for field_errors in form.errors.values %}
+            {% for error in field_errors %}{{ error }} {% endfor %}
+        {% endfor %}
+    </p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'login' %}" class="mt-6">
+        {% csrf_token %}
+        <div class="flex flex-col gap-1 mb-4">
+            <label for="username" class="block text-gray-600"><strong>E-mail</strong></label>
+            <div class="flex items-center border rounded-lg p-2">
+                <span class="text-gray-400 px-2">
+                    <i class="fa-solid fa-envelope !important"></i>
+                </span>
+                <input type="email" id="username" name="username" placeholder="seuemail@example.com"
+                    class="w-full focus:outline-none" required>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-1 mb-4">
+            <label for="password" class="block text-gray-600"><strong>Senha</strong></label>
+            <div class="flex items-center border rounded-lg p-2">
+                <span class="text-gray-400 px-2">
+                    <i class="fas fa-lock"></i>
+                </span>
+                <input type="password" id="password" name="password" placeholder="********"
+                    class="w-full focus:outline-none" required>
+            </div>
+        </div>
+
+        <div class="text-right mb-4">
+            <a href="{% url 'forgot_password' %}" class="text-blue-600 text-sm hover:underline w-full">Forgot
+                password?</a>
+        </div>
+
+        <button type="submit"
+            class="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">
+            Login
+        </button>
+
+        <div class="flex justify-center items-center my-4">
+            <hr class="w-1/3 border-gray-300">
+            <span class="px-2 text-gray-500">ou</span>
+            <hr class="w-1/3 border-gray-300">
+        </div>
+
+        <div class="flex justify-center gap-5">
+            <button type="button"
+                class="w-full border py-2 rounded-lg flex items-center justify-center hover:bg-gray-100">
+                <img src="{% static 'images/google-icon.png' %}" alt="Google" class="w-5 h-5 mr-2">
+            </button>
+            <button type="button"
+                class="w-full border py-2 rounded-lg flex items-center justify-center hover:bg-gray-100">
+                <img src="{% static 'images/github-icon.png' %}" alt="GitHub" class="w-5 h-5 mr-2">
+            </button>
+        </div>
+    </form>
+
+    <p class="text-center mt-4 text-gray-600">
+        Você ainda não tem conta? Faça seu <a href="{% url 'register' %}"
+            class="text-blue-600 font-semibold hover:underline w-full">cadastro</a>
+    </p>
+    <a href="/" class="block text-center text-gray-600 hover:underline w-full">Retornar à Home</a>
+</div>
+
+{% endblock %}

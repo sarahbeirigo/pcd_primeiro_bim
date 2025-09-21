@@ -1,0 +1,25 @@
+<nav class="menu bg-base-200 w-56 p-4 border-r border-[rgb(229,232,235)]">
+    <ul class="flex flex-col gap-2">
+        <li>
+            <a href="{% url 'dashboard_main' %}" class="flex items-center justify-start gap-2 px-3 py-2 text-[#374151] rounded-[0.375rem] hover:bg-[#e2e8f0] {% if request.path == '/dashboard/' %}bg-[#e2e8f0] font-bold{% endif %}">
+                <i class="fa-solid fa-user w-[18px]"></i>
+                Minha Conta
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'raffle_list_admin' %}" class="flex items-center justify-start gap-2 px-3 py-2 text-[#374151] rounded-[0.375rem] hover:bg-[#e2e8f0] {% if request.path == '/dashboard/rifas/' %}bg-[#e2e8f0] font-bold{% endif %}">
+                <i class="fa-solid fa-ticket w-[18px]"></i>
+                Rifas
+            </a>
+        </li>
+        <li>
+            <form action="{% url 'logout' %}" method="POST" class="w-full block">
+                {% csrf_token %}
+                <button type="submit" class="flex items-center justify-start gap-2 px-3 py-2 text-[#374151] rounded-[0.375rem] hover:bg-[#e2e8f0] cursor-pointer w-full">
+                    <i class="fa-solid fa-right-from-bracket w-[18px]"></i>
+                    Sair
+                </button>
+            </form>
+        </li>
+    </ul>
+</nav>

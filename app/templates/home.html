@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Rifando - Home{% endblock %}
+
+{% block content %}
+<div class="relative flex flex-col items-center w-full h-full">
+    <section
+        class="relative flex flex-col lg:flex-row items-center justify-center text-center w-full min-h-[calc(100vh_-_200px)] bg-white text-black gap-8 max-lg:pt-12">
+        <div class="flex flex-col gap-4 p-8">
+            <div class="flex w-full items-start justify-start flex-col">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-center lg:text-start">Crie seu sorteio em <br
+                        class="hidden lg:block" />minutos!</h1>
+                <p class="text-lg md:text-2xl mb-8 text-center lg:text-start">Tenha acesso à plataforma mais completa do
+                    mercado
+                    <br class="hidden lg:block" />para criar seu sorteio!
+                </p>
+            </div>
+            <div class="flex w-full items-center justify-center">
+                <a href="{% url 'register' %}"
+                    class="px-8 py-4 bg-[#005FF9] text-white font-semibold rounded-[25px] shadow-lg hover:bg-gray-200 transition font-bold">
+                    Crie seu sorteio
+                </a>
+            </div>
+        </div>
+        <div class="flex lg:self-end">
+            <img class="w-[450px]" src="{% static 'images/personagem-de-desenho.png' %}"
+                alt="Ilustração de um personagem de desenho">
+        </div>
+    </section>
+
+    <section class="flex flex-wrap justify-center gap-8 w-full bg-white">
+        <div class="w-full p-12 bg-gray-100 rounded-lg shadow-md text-center gap-8 flex flex-col">
+            <div class="flex flex-col items-center justify-center gap-3">
+                <h2 class="text-[32px] font-bold">Algumas das nossas funcionalidades</h2>
+                <p class="text-gray-700 text-[16px]">Conheça mais sobre o que a nossa plataforma pode oferecer.</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-evenly gap-8">
+                <div class="w-[200px] gap-4 flex flex-col items-center">
+                    <img class="w-[56px]" src="{% static 'images/Group-73.png' %}" alt="Ícone de bilhetes premiados">
+                    <div>
+                        <span class="font-bold text-[16px]">Bilhetes premiados</span>
+                        <p class="text-gray-700 text-xs">Defina bilhetes premiados e veja o status a qualquer
+                            momento.</p>
+                    </div>
+                </div>
+                <div class="w-[200px] gap-4 flex flex-col items-center">
+                    <img class="w-[56px]" src="{% static 'images/Group-72.png' %}"
+                        alt="Ícone de pagamentos automáticos">
+                    <div>
+                        <span class="font-bold text-[16px]">Pagamentos automáticos</span>
+                        <p class="text-gray-700 text-xs">Receba pagamentos automáticos na sua conta via Pix ou
+                            cartão de crédito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="justify-center items-center gap-10 py-24">
+        <div class="flex items-center justify-center max-w-[250px] md:max-w-[900px]">
+            <img class="hidden md:flex w-full" src="{% static 'images/passo-a-passo.png' %}"
+                alt="Ilustração do passo a passo do sorteio">
+            <img class="flex md:hidden w-full" src="{% static 'images/passo-a-passo-mb.png' %}"
+                alt="Ilustração do passo a passo do sorteio">
+        </div>
+    </section>
+
+    <section class="flex flex-wrap justify-center gap-8 w-full bg-white">
+        <div class="w-full p-14 bg-gray-100 shadow-md flex flex-col items-center rounded-[5px] gap-8">
+            <div class="w-[200px] flex flex-col items-center">
+                <img src="{% static 'images/coin.png' %}" alt="Ícone de moeda">
+            </div>
+            <div class="flex flex-col gap-4 text-center">
+                <h2 class="text-3xl font-bold">Receba você mesmo seu dinheiro!</h2>
+                <p class="text-[#969696]">Todo o dinheiro que você arrecadar vai diretamente para a sua conta
+                    bancária!</p>
+            </div>
+            <div class="flex flex-col text-center">
+                <a href="{% url 'register' %}"
+                    class="px-8 py-4 bg-[#005FF9] text-white font-semibold rounded-[25px] shadow-lg hover:bg-gray-200">
+                    Crie seu sorteio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full max-w-[1020px] bg-gradient-to-t from-blue-200 to-white rounded-[5px] mt-24 mb-12 p-12">
+        <div class="flex flex-col items-center justify-center gap-8 text-center">
+            <div class="flex flex-col gap-1">
+                <h2 class="text-black font-bold text-[30px]">Compartilhe o vencedor</h2>
+                <p class="text-black text-[16px]">Mostre pra todo mundo quem ganhou o seu sorteio</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img class="rounded-[5px] w-full max-w-[780px]" src="{% static 'images/Group-109.png' %}"
+                    alt="Imagem ilustrando vencedor do sorteio">
+            </div>
+        </div>
+    </section>
+
+    <section class="flex flex-col lg:flex-row items-center justify-center gap-8 w-full py-24 bg-white">
+        <div class="relative flex flex-col h-full">
+            <img class="rounded-[5px] w-[600px]" src="{% static 'images/Group-80.png' %}" alt="Suporte da plataforma">
+        </div>
+        <div class="flex flex-col text-left gap-4">
+            <h2 class="text-black font-bold text-[30px]">Suporte</h2>
+            <p class="text-[#7B7B7B] text-[16px]">
+                Caso tenha qualquer dúvida é só entrar em contato <br />
+                conosco pelo WhatsApp que iremos lhe ajudar o mais <br />
+                rápido possível! Somos referência em suporte ao cliente.
+            </p>
+            <p class="text-[#7B7B7B] text-[16px]">
+                Nós também temos uma central de ajuda com artigos <br />
+                explicativos preparada para você tirar todas as suas <br />
+                dúvidas.
+            </p>
+        </div>
+    </section>
+
+    <section
+        class="flex flex-col items-center justify-center w-full max-w-[1200px] min-h-[300px] bg-gradient-to-tr from-blue-600 to-black rounded-[20px]">
+        <div class="flex flex-col items-center justify-center p-14 max-sm:px-8">
+            <div class="mb-4">
+                <img class="rounded-[5px] w-[151px] " src="{% static 'images/Group-113.png' %}" alt="Performance">
+            </div>
+            <div class="text-center">
+                <h2 class="text-white font-semibold text-[30px] mb-4">
+                    Até <span style="color: blue; margin-left: 8px; margin-right: 8px;">10.000.000</span> de bilhetes
+                </h2>
+                <p class="text-white font-semibold text-[15px]">
+                    Nossa plataforma oferece compras rápidas e fluídas.<br />
+                    Independentemente do volume de participantes, sua campanha<br />
+                    terá desempenho de alto nível!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex flex-col w-full py-24 bg-white">
+        <div class="w-full bg-gray-100 shadow-md rounded-[5px] px-8 sm:px-12 lg:px-24 py-12">
+            <div class="flex flex-col items-center justify-start gap-6 w-full max-w-[1024px] mx-auto">
+                <div class="text-start w-full">
+                    <h2 class="text-[40px] font-bold">Dúvidas frequentes</h2>
+                </div>
+
+                <div class="w-full flex lg:grid grid-cols-2 gap-5 flex-col items-start justify-center mb-3">
+                    <div
+                        class="accordion-content w-full rounded-[5px] bg-gray-200 overflow-hidden [&.is-open]:pb-[15px] [&.is-open_header]:min-h-[35px] [&.is-open_.accordion-content-description]:p-[15px]">
+                        <header
+                            class="flex items-center justify-between min-h-[50px] p-[15px] cursor-pointer transition-all duration-75">
+                            <span class="accordion-content-title text-md font-semibold">
+                                Qual o valor para criar uma campanhar?
+                            </span>
+                            <i class="fa-solid fa-plus"></i>
+                        </header>
+                        <p class="accordion-content-description h-0 p-0">
+                            Somente um texto descritivo simples para preencher este componente.
+                        </p>
+                    </div>
+
+                    <div
+                        class="accordion-content w-full rounded-[5px] bg-gray-200 overflow-hidden [&.is-open]:pb-[15px] [&.is-open_header]:min-h-[35px] [&.is-open_.accordion-content-description]:p-[15px]">
+                        <header
+                            class="flex items-center justify-between min-h-[50px] p-[15px] cursor-pointer transition-all duration-75">
+                            <span class="accordion-content-title text-md font-semibold">
+                                Qual o valor para criar uma campanhar?
+                            </span>
+                            <i class="fa-solid fa-plus"></i>
+                        </header>
+                        <p class="accordion-content-description h-0 p-0">
+                            Somente um texto descritivo simples para preencher este componente.
+                        </p>
+                    </div>
+
+                    <div
+                        class="accordion-content w-full rounded-[5px] bg-gray-200 overflow-hidden [&.is-open]:pb-[15px] [&.is-open_header]:min-h-[35px] [&.is-open_.accordion-content-description]:p-[15px]">
+                        <header
+                            class="flex items-center justify-between min-h-[50px] p-[15px] cursor-pointer transition-all duration-75">
+                            <span class="accordion-content-title text-md font-semibold">
+                                Qual o valor para criar uma campanhar?
+                            </span>
+                            <i class="fa-solid fa-plus"></i>
+                        </header>
+                        <p class="accordion-content-description h-0 p-0">
+                            Somente um texto descritivo simples para preencher este componente.
+                        </p>
+                    </div>
+
+                    <div
+                        class="accordion-content w-full rounded-[5px] bg-gray-200 overflow-hidden [&.is-open]:pb-[15px] [&.is-open_header]:min-h-[35px] [&.is-open_.accordion-content-description]:p-[15px]">
+                        <header
+                            class="flex items-center justify-between min-h-[50px] p-[15px] cursor-pointer transition-all duration-75">
+                            <span class="accordion-content-title text-md font-semibold">
+                                Qual o valor para criar uma campanhar?
+                            </span>
+                            <i class="fa-solid fa-plus"></i>
+                        </header>
+                        <p class="accordion-content-description h-0 p-0">
+                            Somente um texto descritivo simples para preencher este componente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

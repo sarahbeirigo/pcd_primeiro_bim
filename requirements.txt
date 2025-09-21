@@ -1,0 +1,4 @@
+django
+django-browser-reload
+pillow
+fontawesomefree==6.4.2
