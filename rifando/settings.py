@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_browser_reload',
     'app',
+    'rest_framework',
+    'api.apps.ApiConfig',
+    'drf_spectacular',
     ]
 
 MIDDLEWARE = [
